@@ -3,7 +3,6 @@ package io.github.Santeeisweird9;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
-//import java.net.InetAddress;
 import java.util.Scanner;
 
 public class Main {
@@ -21,7 +20,12 @@ public class Main {
 		if (i.contentEquals("")) {
 			port = 80;
 		} else {
-			port = Integer.valueOf(i);
+			try {
+				port = Integer.valueOf(i);
+			} catch (Exception e) {
+				System.out.println("An error has occured getting your port. This usually occurs because you inputted characters. Please try again!");
+				selection();
+			}
 		}
 		System.out.println("IP: "+url+" at Port "+port);
 		confirm();
@@ -31,7 +35,7 @@ public class Main {
 		char selection;
 		System.out.println("Are you sure? (Y/N)");
 		selection = input.next().charAt(0);
-		Character.toLowerCase(selection);
+		selection = Character.toLowerCase(selection);
 		if (selection == 'y') {
 			System.out.println("How many instances?");
 			try {
@@ -44,8 +48,6 @@ public class Main {
 				for(int i = threads;i>0;i--) {
 					createThread();
 				}
-			} else {
-				System.out.println("Restart program.");
 			}
 			
 		} else if (selection == 'n') {
