@@ -9,6 +9,6 @@ On running the program, you will be instructed to do the following:
 3) Confirm your selection
 
 Once you do the following, you'll be instructed to input how many instances of the program you want to run.
-Please note that the number you input will be threads, which will be limited to how much RAM and CPU you have. Beyond 1,000 can result in crashing your site you are pinging.
+Please note that the number you input will be threads, which will be limited to how much RAM and CPU you have.
 
 Once you input threads, the program will execute. To close it, terminate the program.
